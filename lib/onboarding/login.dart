@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moistwears/onboarding/login2.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -61,12 +62,12 @@ class Login extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   minimumSize: const Size(double.infinity, 50)),
               child: const Text(
-                'Get Started',
+                'Create a free account',
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Login()));
+                    MaterialPageRoute(builder: (context) => const GoToHome()));
               }),
           const SizedBox(
             height: 15,
@@ -81,10 +82,7 @@ class Login extends StatelessWidget {
                 'Continue as guest',
                 style: TextStyle(color: Colors.black),
               ),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Login()));
-              }),
+              onPressed: () {}),
         ]),
       ),
     );

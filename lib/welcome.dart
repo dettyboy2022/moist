@@ -65,10 +65,7 @@ class Welcome extends StatelessWidget {
                   'Continue as guest',
                   style: TextStyle(color: Colors.black),
                 ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const Login()));
-                }),
+                onPressed: () {}),
           ],
         ),
       ),
