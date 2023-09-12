@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moistwears/constants/elevatedbutton.dart';
 import 'package:moistwears/onboarding/login.dart';
 
 class Welcome extends StatelessWidget {
@@ -22,6 +21,12 @@ class Welcome extends StatelessWidget {
               height: 10,
             ),
             const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.local_dining),
+              ],
+            ),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
@@ -33,17 +38,37 @@ class Welcome extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            CustomElevated(
-                child: const Text('Get Started'),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    minimumSize: const Size(double.infinity, 50)),
+                child: const Text(
+                  'Get Started',
+                  style: TextStyle(color: Colors.white),
+                ),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const Login()));
                 }),
             const SizedBox(
-              height: 10,
+              height: 15,
             ),
-            CustomElevated(
-                child: const Text('Continue as guest'), onPressed: () {})
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey.shade200,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    minimumSize: const Size(double.infinity, 50)),
+                child: const Text(
+                  'Continue as guest',
+                  style: TextStyle(color: Colors.black),
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Login()));
+                }),
           ],
         ),
       ),
