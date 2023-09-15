@@ -33,6 +33,7 @@ class _BottomNavState extends State<BottomNav> {
               currentIndex = value;
             });
           },
+          selectedItemColor: Colors.black,
           elevation: 0,
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
