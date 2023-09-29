@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moistwears/onboarding/splashscreen.dart';
+import 'package:moistwears/welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home: const Welcome(),
     );
   }
 }

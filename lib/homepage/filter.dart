@@ -15,7 +15,7 @@ class Filter extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Column(
+      body: const Column(
         children: [],
       ),
     );

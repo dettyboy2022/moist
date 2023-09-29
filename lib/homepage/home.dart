@@ -28,26 +28,33 @@ class Home extends StatelessWidget {
                 height: 15,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Expanded(
+                  Expanded(
+                    flex: 9,
                     child: TextField(
                       decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.search),
-                          hintText: 'Search',
-                          hintStyle: TextStyle(
+                          filled: true,
+                          fillColor: Colors.grey.shade300,
+                          prefixIcon: const Icon(Icons.search),
+                          hintText: 'Search Wears',
+                          hintStyle: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.w400),
-                          border: OutlineInputBorder()),
+                          border: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.circular(10))),
                     ),
                   ),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Filter()));
-                      },
-                      icon: const Icon(Iconsax.filter_add))
+                  Expanded(
+                    flex: 1,
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Filter()));
+                        },
+                        icon: const Icon(Iconsax.filter_add)),
+                  )
                 ],
               ),
             ],
