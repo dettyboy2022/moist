@@ -7,65 +7,91 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
+      body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Column(
+              children: [
+                Image.asset(
+                  'assets/frame2.png',
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Image.asset(
+                  'assets/frame3.png',
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                )
+              ],
+            ),
             const Spacer(),
-            const Text(
-              'Find Your',
-              style: TextStyle(fontSize: 45, fontWeight: FontWeight.w500),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Find Your',
+                    style: TextStyle(fontSize: 45, fontWeight: FontWeight.w500),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset('assets/moistvector.png'),
+                    ],
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Favorite Wears',
+                        style: TextStyle(
+                            fontSize: 45, fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          minimumSize: const Size(double.infinity, 50)),
+                      child: const Text(
+                        'Get Started',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Login()));
+                      }),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.grey.shade200,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          minimumSize: const Size(double.infinity, 50)),
+                      child: const Text(
+                        'Continue as guest',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      onPressed: () {}),
+                ],
+              ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.local_dining),
-              ],
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  'Favorite Wears',
-                  style: TextStyle(fontSize: 45, fontWeight: FontWeight.w500),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    minimumSize: const Size(double.infinity, 50)),
-                child: const Text(
-                  'Get Started',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const Login()));
-                }),
-            const SizedBox(
-              height: 15,
-            ),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey.shade200,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    minimumSize: const Size(double.infinity, 50)),
-                child: const Text(
-                  'Continue as guest',
-                  style: TextStyle(color: Colors.black),
-                ),
-                onPressed: () {}),
           ],
         ),
       ),

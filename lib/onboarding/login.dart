@@ -30,7 +30,7 @@ class Login extends StatelessWidget {
           padding: const EdgeInsets.all(15.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Stack(
+            Stack(  
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
