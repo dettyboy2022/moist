@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:moistwears/homepage/widgets/home_row.dart';
+import 'package:moistwears/homepage/widgets/recommended.dart';
 import 'package:moistwears/homepage/widgets/search.dart';
 
 class Home extends StatelessWidget {
@@ -118,99 +119,7 @@ class Home extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                      decoration: BoxDecoration(color: Colors.grey.shade200),
-                      child: Column(
-                        children: [
-                          Image.asset('assets/girl.png'),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text('Miami Life Bodysuit'),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text('Brown Combo'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                      decoration: BoxDecoration(color: Colors.grey.shade200),
-                      child: Column(
-                        children: [
-                          Image.asset('assets/boy.png'),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text('Miami Life Bodysuit'),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text('Brown Combo'),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                      decoration: BoxDecoration(color: Colors.grey.shade200),
-                      child: Column(
-                        children: [
-                          Image.asset('assets/girl.png'),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text('Miami Life Bodysuit'),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text('Brown Combo'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                      decoration: BoxDecoration(color: Colors.grey.shade200),
-                      child: Column(
-                        children: [
-                          Image.asset('assets/boy.png'),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text('Miami Life Bodysuit'),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text('Brown Combo'),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              const Recommended(),
             ],
           ),
         )),

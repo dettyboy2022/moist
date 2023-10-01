@@ -115,7 +115,8 @@ class _FilterState extends State<Filter> {
                             ),
                             child: const Center(child: Text('Select')),
                           );
-                        })),
+                        })
+                        ),
                 ExpansionPanelRadio(
                     canTapOnHeader: true,
                     value: 4,
