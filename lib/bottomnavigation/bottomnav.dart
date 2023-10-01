@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:moistwears/bottomnavigation/cart.dart';
@@ -13,39 +14,49 @@ class BottomNav extends StatefulWidget {
   State<BottomNav> createState() => _BottomNavState();
 }
 
-int currentIndex = 0;
-
-List<Widget> pages = [
-  const Home(),
-  const Favourite(),
-  const Cart(),
-  const Profile()
-];
-
 class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: pages[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-          onTap: (value) {
-            setState(() {
-              currentIndex = value;
-            });
-          },
-          selectedItemColor: Colors.black,
-          elevation: 0,
-          currentIndex: currentIndex,
-          type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Iconsax.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Iconsax.heart), label: 'Favourite'),
-            BottomNavigationBarItem(
-                icon: Icon(Iconsax.shopping_bag), label: 'Cart'),
-            BottomNavigationBarItem(
-                icon: Icon(Iconsax.profile_2user), label: 'Profile'),
-          ]),
-    );
+    return CupertinoTabScaffold(
+        tabBar: CupertinoTabBar(
+            activeColor: Colors.black,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(icon: Icon(Iconsax.home), label: 'Home'),
+              BottomNavigationBarItem(
+                  icon: Icon(Iconsax.heart), label: 'Favourite'),
+              BottomNavigationBarItem(
+                  icon: Icon(Iconsax.shopping_bag), label: 'Cart'),
+              BottomNavigationBarItem(
+                  icon: Icon(Iconsax.profile_2user), label: 'Profile'),
+            ]),
+        tabBuilder: (context, index) {
+          switch (index) {
+            case 0:
+              return CupertinoTabView(
+                builder: (context) {
+                  return const CupertinoPageScaffold(child: Home());
+                },
+              );
+            case 1:
+              return CupertinoTabView(
+                builder: (context) {
+                  return const CupertinoPageScaffold(child: Favourite());
+                },
+              );
+            case 2:
+              return CupertinoTabView(
+                builder: (context) {
+                  return const CupertinoPageScaffold(child: Cart());
+                },
+              );
+            case 3:
+              return CupertinoTabView(
+                builder: (context) {
+                  return const CupertinoPageScaffold(child: Profile());
+                },
+              );
+          }
+          return Container();
+        });
   }
 }
