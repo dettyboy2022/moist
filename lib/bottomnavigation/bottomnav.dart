@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:moistwears/bottomnavigation/cart.dart';
+import 'package:moistwears/presentation/view/cart/cart.dart';
 import 'package:moistwears/bottomnavigation/favourite.dart';
 import 'package:moistwears/bottomnavigation/profile.dart';
-
-import '../homepage/home.dart';
+import '../presentation/view/homepage/home.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});

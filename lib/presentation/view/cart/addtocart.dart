@@ -12,16 +12,16 @@ class _AddToCartState extends State<AddToCart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.grey.shade400,
+      ),
       body: ListView(
         children: [
           Container(
             decoration: BoxDecoration(color: Colors.grey.shade400),
-            height: MediaQuery.of(context).size.width * 1.4,
+            height: MediaQuery.of(context).size.width * 1.3,
             child: Image.asset(
-              'assets/lady.png',
-              width: double.infinity,
-              height: 500,
+              'assets/png/lady.png',
               fit: BoxFit.contain,
               filterQuality: FilterQuality.high,
             ),
@@ -71,7 +71,9 @@ class _AddToCartState extends State<AddToCart> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5)),
                         minimumSize: const Size(double.infinity, 50)),
-                    onPressed: () {},
+                    onPressed: () {
+                      // send Products to cart/checkout page
+                    },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

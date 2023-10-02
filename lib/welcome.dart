@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moistwears/onboarding/login.dart';
+import 'package:moistwears/presentation/view/onboarding/login.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -59,6 +59,11 @@ class Welcome extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
+                  // CustomElevated(
+                  //   onPressed: () {},
+                  //   color: Colors.black,
+                  //   child: const Text('Get Started'),
+                  // ),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,

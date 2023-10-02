@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moistwears/onboarding/login2.dart';
+import 'package:moistwears/presentation/view/onboarding/login2.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});

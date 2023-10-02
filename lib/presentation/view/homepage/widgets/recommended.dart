@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moistwears/homepage/addtocart.dart';
+import 'package:moistwears/presentation/view/cart/addtocart.dart';
 
 class Recommended extends StatefulWidget {
   const Recommended({super.key});
