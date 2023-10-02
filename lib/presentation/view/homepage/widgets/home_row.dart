@@ -12,7 +12,7 @@ List categories = [
   {'image': 'assets/png/curve.png', 'text': 'Curve'},
   {'image': 'assets/png/kids.png', 'text': 'Kids'},
   {'image': 'assets/png/men.png', 'text': 'Men'},
-  {'image': 'assets/png/plus.png', 'text': 'Plus'},
+  {'image': 'assets/png/Plus.png', 'text': 'Plus'},
   {'image': 'assets/png/women.png', 'text': 'Women'},
 ];
 

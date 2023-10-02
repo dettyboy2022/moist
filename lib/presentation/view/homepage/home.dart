@@ -61,9 +61,6 @@ class Home extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -74,9 +71,6 @@ class Home extends StatelessWidget {
                     ),
                     Icon(Icons.arrow_forward)
                   ],
-                ),
-                const SizedBox(
-                  height: 15,
                 ),
                 const Recommended(),
               ],

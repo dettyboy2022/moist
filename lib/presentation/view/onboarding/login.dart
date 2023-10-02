@@ -1,36 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:moistwears/presentation/view/onboarding/login2.dart';
 
+import '../../../constants/elevatedbutton.dart';
+
 class Login extends StatelessWidget {
   const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     // backgroundColor: Colors.red,
-      //     // toolbarHeight: 200,
-      //     // title: Stack(
-      //     //   children: [
-      //     //     Row(
-      //     //       mainAxisAlignment: MainAxisAlignment.end,
-      //     //       children: [
-      //     //         Image.asset('assets/background.png'),
-      //     //       ],
-      //     //     ),
-      //     //     const Text(
-      //     //       'Join Moist Streetwear',
-      //     //       style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
-      //     //     ),
-      //     //   ],
-      //     // ),
-      //     ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Stack(  
+            Stack(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -121,36 +105,28 @@ class Login extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    minimumSize: const Size(double.infinity, 50)),
-                child: const Text(
-                  'Create a free account',
-                  style: TextStyle(color: Colors.white),
-                ),
+            CustomElevated(
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const GoToHome()));
-                }),
+                },
+                color: Colors.black,
+                child: const Text(
+                  'Create a free account',
+                  style: TextStyle(color: Colors.white),
+                )),
             const SizedBox(
               height: 15,
             ),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey.shade200,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    minimumSize: const Size(double.infinity, 50)),
+            CustomElevated(
+                onPressed: () {},
+                color: Colors.grey.shade200,
                 child: const Text(
                   'Continue as guest',
                   style: TextStyle(color: Colors.black),
-                ),
-                onPressed: () {}),
+                )),
           ]),
         ),
       ),

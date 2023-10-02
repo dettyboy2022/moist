@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moistwears/constants/elevatedbutton.dart';
 import 'package:moistwears/presentation/view/onboarding/login.dart';
 
 class Welcome extends StatelessWidget {
@@ -27,7 +28,6 @@ class Welcome extends StatelessWidget {
                 )
               ],
             ),
-            const Spacer(),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Column(
@@ -59,41 +59,28 @@ class Welcome extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  // CustomElevated(
-                  //   onPressed: () {},
-                  //   color: Colors.black,
-                  //   child: const Text('Get Started'),
-                  // ),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          minimumSize: const Size(double.infinity, 50)),
-                      child: const Text(
-                        'Get Started',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                  CustomElevated(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const Login()));
-                      }),
+                      },
+                      color: Colors.black,
+                      child: const Text(
+                        'Get Started',
+                        style: TextStyle(color: Colors.white),
+                      )),
                   const SizedBox(
                     height: 15,
                   ),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.grey.shade200,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          minimumSize: const Size(double.infinity, 50)),
+                  CustomElevated(
+                      onPressed: () {},
+                      color: Colors.grey.shade200,
                       child: const Text(
                         'Continue as guest',
                         style: TextStyle(color: Colors.black),
-                      ),
-                      onPressed: () {}),
+                      )),
                 ],
               ),
             ),

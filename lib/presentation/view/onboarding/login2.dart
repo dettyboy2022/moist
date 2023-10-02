@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:moistwears/bottomnavigation/bottomnav.dart';
 
+import '../../../constants/elevatedbutton.dart';
+
 class GoToHome extends StatelessWidget {
   const GoToHome({super.key});
 
@@ -34,22 +36,18 @@ class GoToHome extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          minimumSize: const Size(double.infinity, 50)),
-                      child: const Text(
-                        'Continue',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                  CustomElevated(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const BottomNav()));
-                      }),
+                      },
+                      color: Colors.black,
+                      child: const Text(
+                        'Continue',
+                        style: TextStyle(color: Colors.white),
+                      )),
                 ],
               ),
             ),

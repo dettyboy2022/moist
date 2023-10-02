@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../constants/elevatedbutton.dart';
+
 class AddToCart extends StatefulWidget {
   const AddToCart({super.key});
 
@@ -65,15 +67,9 @@ class _AddToCartState extends State<AddToCart> {
                 const SizedBox(
                   height: 10,
                 ),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)),
-                        minimumSize: const Size(double.infinity, 50)),
-                    onPressed: () {
-                      // send Products to cart/checkout page
-                    },
+                CustomElevated(
+                    onPressed: () {},
+                    color: Colors.black,
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -89,7 +85,7 @@ class _AddToCartState extends State<AddToCart> {
                           color: Colors.white,
                         )
                       ],
-                    ))
+                    )),
               ],
             ),
           )

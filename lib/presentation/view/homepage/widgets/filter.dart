@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moistwears/constants/custombar.dart';
 
 class Filter extends StatefulWidget {
   const Filter({super.key});
@@ -13,15 +14,7 @@ class _FilterState extends State<Filter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.black,
-        title: const Text(
-          'Filter',
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: 'Filter'),
       body: Column(
         children: [
           Padding(
@@ -115,8 +108,7 @@ class _FilterState extends State<Filter> {
                             ),
                             child: const Center(child: Text('Select')),
                           );
-                        })
-                        ),
+                        })),
                 ExpansionPanelRadio(
                     canTapOnHeader: true,
                     value: 4,
