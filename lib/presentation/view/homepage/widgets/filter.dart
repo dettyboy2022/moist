@@ -36,12 +36,12 @@ class _FilterState extends State<Filter> {
                     },
                     body: GridView.builder(
                         shrinkWrap: true,
-                        itemCount: 5,
+                        itemCount: price.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 mainAxisExtent: 50,
-                                crossAxisSpacing: 20,
-                                mainAxisSpacing: 20,
+                                crossAxisSpacing: 10,
+                                mainAxisSpacing: 10,
                                 crossAxisCount: 3),
                         itemBuilder: (context, index) {
                           return Container(
@@ -51,7 +51,7 @@ class _FilterState extends State<Filter> {
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(),
                             ),
-                            child: const Center(child: Text('Select')),
+                            child: Center(child: Text(price[index])),
                           );
                         })),
                 ExpansionPanelRadio(
@@ -68,16 +68,14 @@ class _FilterState extends State<Filter> {
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 mainAxisExtent: 50,
-                                crossAxisSpacing: 20,
-                                mainAxisSpacing: 20,
-                                crossAxisCount: 6),
+                                crossAxisSpacing: 10,
+                                mainAxisSpacing: 10,
+                                crossAxisCount: 5),
                         itemBuilder: (context, index) {
                           return Container(
-                            height: 50,
-                            width: 50,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: Colors.yellow,
+                              shape: BoxShape.circle,
+                              color: colors[index],
                             ),
                           );
                         })),
@@ -91,22 +89,16 @@ class _FilterState extends State<Filter> {
                     },
                     body: GridView.builder(
                         shrinkWrap: true,
-                        itemCount: 5,
+                        itemCount: reviews.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 mainAxisExtent: 50,
-                                crossAxisSpacing: 20,
-                                mainAxisSpacing: 20,
-                                crossAxisCount: 3),
+                                crossAxisSpacing: 10,
+                                mainAxisSpacing: 10,
+                                crossAxisCount: 4),
                         itemBuilder: (context, index) {
-                          return Container(
-                            height: 50,
-                            width: 100,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(),
-                            ),
-                            child: const Center(child: Text('Select')),
+                          return Wrap(
+                            children: [Image.asset(reviews[index])],
                           );
                         })),
                 ExpansionPanelRadio(
@@ -125,14 +117,14 @@ class _FilterState extends State<Filter> {
                                 mainAxisExtent: 50,
                                 crossAxisSpacing: 20,
                                 mainAxisSpacing: 20,
-                                crossAxisCount: 5),
+                                crossAxisCount: 4),
                         itemBuilder: (context, index) {
                           return Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(),
                             ),
-                            child: const Center(child: Text('Select')),
+                            child: Center(child: Text(products[index])),
                           );
                         })),
                 ExpansionPanelRadio(
@@ -160,7 +152,7 @@ class _FilterState extends State<Filter> {
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(),
                             ),
-                            child: const Center(child: Text('Select')),
+                            child: Center(child: Text(products[index])),
                           );
                         })),
               ],
@@ -170,4 +162,57 @@ class _FilterState extends State<Filter> {
       ),
     );
   }
+
+  List price = [
+    '#0 - #10,000',
+    '#11,000 - #50,000',
+    '#51,000 - #100,000',
+    '#101,500 - #500,000',
+    '#510,000 - #1,000,000',
+  ];
+
+  List colors = [
+    Colors.red,
+    Colors.yellow,
+    Colors.black,
+    Colors.blue,
+    Colors.green,
+    Colors.grey,
+    Colors.brown,
+    Colors.amber,
+    Colors.teal,
+    Colors.cyan,
+  ];
+
+  List reviews = [
+    'assets/png/star5.png',
+    'assets/png/star4.png',
+    'assets/png/star3.png',
+    'assets/png/star2.png',
+    'assets/png/star1.png',
+  ];
+
+  List products = [
+    'Bags',
+    'Bodysuits',
+    'Dresses',
+    'jumpsuits',
+    'Shoes',
+    'Jacket',
+    'Skirts',
+    'Knickers',
+    'T-Shirts',
+    'Trousers',
+    'Shorts',
+    'Sandals',
+    'Jeans',
+  ];
+
+  List available = [
+    'All Deals',
+    'Available',
+    'Unavailable',
+    'Upcoming',
+    'Watchlist',
+  ];
 }
