@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moistwears/constants/elevatedbutton.dart';
-import 'package:moistwears/presentation/view/onboarding/login.dart';
+import 'package:moistwears/presentation/view/authentication/login.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
