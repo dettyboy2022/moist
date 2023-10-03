@@ -47,10 +47,7 @@ class _RecommendedState extends State<Recommended> {
         shrinkWrap: true,
         itemCount: recommend.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 1 / 2.2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 2),
+            childAspectRatio: 1 / 2.2, crossAxisSpacing: 10, crossAxisCount: 2),
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {

@@ -64,7 +64,7 @@ class _FilterState extends State<Filter> {
                     },
                     body: GridView.builder(
                         shrinkWrap: true,
-                        itemCount: 10,
+                        itemCount: colors.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 mainAxisExtent: 50,
@@ -111,7 +111,7 @@ class _FilterState extends State<Filter> {
                     },
                     body: GridView.builder(
                         shrinkWrap: true,
-                        itemCount: 13,
+                        itemCount: products.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 mainAxisExtent: 50,
@@ -137,7 +137,7 @@ class _FilterState extends State<Filter> {
                     },
                     body: GridView.builder(
                         shrinkWrap: true,
-                        itemCount: 5,
+                        itemCount: available.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 mainAxisExtent: 50,
@@ -152,7 +152,7 @@ class _FilterState extends State<Filter> {
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(),
                             ),
-                            child: Center(child: Text(products[index])),
+                            child: Center(child: Text(available[index])),
                           );
                         })),
               ],

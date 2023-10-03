@@ -76,11 +76,12 @@ class _PersonalState extends State<Personal> {
 
   void showBottom(BuildContext context) async {
     await showModalBottomSheet(
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        )),
+        shape: RoundedRectangleBorder(
+            side: BorderSide(color: Colors.grey.shade900),
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            )),
         context: context,
         builder: (context) {
           return SizedBox(
