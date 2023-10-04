@@ -38,7 +38,6 @@ class Login extends StatelessWidget {
                 height: 10,
               ),
               const EmailandPass(),
-              
               const SizedBox(
                 height: 20,
               ),

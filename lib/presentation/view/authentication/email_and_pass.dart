@@ -8,58 +8,77 @@ class EmailandPass extends StatefulWidget {
 }
 
 class _EmailandPassState extends State<EmailandPass> {
-  final _formfield = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
   bool passToggle = true;
+  var passKey = GlobalKey<FormState>();
+  var emailKey = GlobalKey<FormState>();
+
+  bool validate() {
+    return passKey.currentState!.validate();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formfield,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Email',
-            style: TextStyle(fontSize: 18),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          TextFormField(
-            controller: emailController,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Email',
+          style: TextStyle(fontSize: 18),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Form(
+          key: emailKey,
+          autovalidateMode: AutovalidateMode.always,
+          child: TextFormField(
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
               prefixIcon: Icon(Icons.email),
             ),
+            validator: (value) {
+              bool emailRegex =
+                  RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$')
+                      .hasMatch(value!);
+              if (value.isEmpty) {
+                return 'Enter Email';
+              }
+
+              if (!emailRegex) {
+                return "Enter a Valid Email";
+              }
+              return null;
+            },
           ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Text(
-            'Username',
-            style: TextStyle(fontSize: 18),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const TextField(
-            decoration: InputDecoration(border: OutlineInputBorder()),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Text(
-            'Password',
-            style: TextStyle(fontSize: 18),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          TextField(
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text(
+          'Username',
+          style: TextStyle(fontSize: 18),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const TextField(
+          decoration: InputDecoration(border: OutlineInputBorder()),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text(
+          'Password',
+          style: TextStyle(fontSize: 18),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Form(
+          key: passKey,
+          autovalidateMode: AutovalidateMode.always,
+          child: TextFormField(
             obscureText: passToggle,
-            controller: passwordController,
             decoration: InputDecoration(
                 border: const OutlineInputBorder(),
                 prefixIcon: const Icon(Icons.lock),
@@ -72,10 +91,22 @@ class _EmailandPassState extends State<EmailandPass> {
                   child: Icon(
                       passToggle ? Icons.visibility : Icons.visibility_off),
                 )),
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Enter a valid password';
+              }
+              bool passwordRegex = RegExp(
+                      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$')
+                  .hasMatch(value);
+              if (!passwordRegex) {
+                return "Enter a Valid Password";
+              }
+              return null;
+            },
           ),
-          const Text('Use 8+ characters'),
-        ],
-      ),
+        ),
+        const Text('Use 8+ characters'),
+      ],
     );
   }
 }
