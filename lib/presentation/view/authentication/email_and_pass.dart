@@ -11,6 +11,7 @@ class _EmailandPassState extends State<EmailandPass> {
   bool passToggle = true;
   var passKey = GlobalKey<FormState>();
   var emailKey = GlobalKey<FormState>();
+  var usernameKey = GlobalKey<FormState>();
 
   bool validate() {
     return passKey.currentState!.validate();
@@ -61,8 +62,18 @@ class _EmailandPassState extends State<EmailandPass> {
         const SizedBox(
           height: 10,
         ),
-        const TextField(
-          decoration: InputDecoration(border: OutlineInputBorder()),
+        Form(
+          key: usernameKey,
+          autovalidateMode: AutovalidateMode.always,
+          child: TextFormField(
+            decoration: const InputDecoration(border: OutlineInputBorder()),
+            validator: (value) {
+              if (value!.length < 4) {
+                return 'Username should be more than 3';
+              }
+              return null;
+            },
+          ),
         ),
         const SizedBox(
           height: 10,

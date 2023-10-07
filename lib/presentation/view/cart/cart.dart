@@ -57,8 +57,8 @@ class Cart extends StatelessWidget {
                                 Text(
                                   '1',
                                   style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400),
                                 ),
                                 SizedBox(
                                   width: 10,
@@ -66,7 +66,10 @@ class Cart extends StatelessWidget {
                                 Icon(Icons.remove_circle)
                               ],
                             ),
-                            Icon(Iconsax.trash)
+                            Icon(
+                              Iconsax.trash,
+                              color: Colors.red,
+                            )
                           ],
                         )
                       ],
@@ -116,7 +119,7 @@ class Cart extends StatelessWidget {
                   ),
                   const Text(
                     '#42,000',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, color: Colors.blue),
                   )
                 ],
               ),

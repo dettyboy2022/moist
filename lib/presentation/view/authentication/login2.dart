@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moistwears/bottomnavigation/bottomnav.dart';
+import 'package:moistwears/presentation/view/bottomnavigation/bottomnav.dart';
 
 import '../../../constants/elevatedbutton.dart';
 

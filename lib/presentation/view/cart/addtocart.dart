@@ -40,13 +40,13 @@ class _AddToCartState extends State<AddToCart> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Row(
+                Row(
                   children: [
-                    Icon(Iconsax.star5),
-                    SizedBox(
+                    Image.asset('assets/png/star5.png'),
+                    const SizedBox(
                       width: 10,
                     ),
-                    Text('(100)')
+                    const Text('(100)')
                   ],
                 ),
                 const SizedBox(
@@ -54,13 +54,21 @@ class _AddToCartState extends State<AddToCart> {
                 ),
                 const Row(
                   children: [
-                    Text('#40,000'),
+                    Text(
+                      '#40,000',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    ),
                     SizedBox(
                       width: 10,
                     ),
                     Text(
                       'Lagos, Nigeria',
-                      style: TextStyle(decoration: TextDecoration.underline),
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.blue,
+                        decorationColor: Colors.blue,
+                      ),
                     )
                   ],
                 ),
