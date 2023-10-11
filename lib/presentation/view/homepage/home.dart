@@ -11,76 +11,90 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              children: [
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Hey Charles',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
-                    ),
-                    Icon(Iconsax.notification)
-                  ],
+        body: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            children: [
+              const Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Hey Charles',
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.w500),
+                      ),
+                      Icon(Iconsax.notification)
+                    ],
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Search(),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  HomeRow(),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/png/banner.png',
+                        width: double.infinity,
+                        fit: BoxFit.fitWidth,
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Deals of the Day',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700, fontSize: 23),
+                          ),
+                          Icon(Icons.arrow_forward)
+                        ],
+                      ),
+                      const Deals(),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Recommended',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700, fontSize: 23),
+                          ),
+                          Icon(Icons.arrow_forward)
+                        ],
+                      ),
+                      const Recommended(),
+                    ],
+                  ),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Search(),
-                const SizedBox(
-                  height: 15,
-                ),
-                const HomeRow(),
-                const SizedBox(
-                  height: 15,
-                ),
-                Image.asset(
-                  'assets/png/banner.png',
-                  width: double.infinity,
-                  fit: BoxFit.fitWidth,
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Deals of the Day',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 23),
-                    ),
-                    Icon(Icons.arrow_forward)
-                  ],
-                ),
-                const Deals(),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Recommended',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 23),
-                    ),
-                    Icon(Icons.arrow_forward)
-                  ],
-                ),
-                const Recommended(),
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),
     );
   }
 }
+
+
+
+
 
 class Deals extends StatelessWidget {
   const Deals({super.key});

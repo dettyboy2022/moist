@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:moistwears/presentation/view/cart/addtocart.dart';
 
 class Recommended extends StatefulWidget {
@@ -49,64 +50,68 @@ class _RecommendedState extends State<Recommended> {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             childAspectRatio: 1 / 2.2, crossAxisSpacing: 10, crossAxisCount: 2),
         itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const AddToCart()));
-            },
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 300,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          topRight: Radius.circular(10)),
-                      color: Colors.grey.shade300),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 300,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10)),
+                    color: Colors.grey.shade300),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AddToCart()));
+                  },
                   child: Image.asset(
                     recommend[index]['image'],
                     fit: BoxFit.contain,
                   ),
                 ),
-                Text(
-                  recommend[index]['title'],
-                  style: TextStyle(color: Colors.grey.shade500),
-                ),
-                Text(
-                  recommend[index]['design'],
-                  style: const TextStyle(
-                      fontSize: 17, fontWeight: FontWeight.w500),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          recommend[index]['price'],
-                          style: const TextStyle(fontSize: 17),
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          recommend[index]['splash'],
-                          style: const TextStyle(
-                              fontSize: 17,
-                              color: Colors.red,
-                              decoration: TextDecoration.lineThrough,
-                              decorationColor: Colors.red,
-                              decorationThickness: 2),
-                        )
-                      ],
-                    ),
-                    const Icon(Icons.favorite_border)
-                  ],
-                )
-              ],
-            ),
+              ),
+              Text(
+                recommend[index]['title'],
+                style: TextStyle(color: Colors.grey.shade500),
+              ),
+              Text(
+                recommend[index]['design'],
+                style:
+                    const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        recommend[index]['price'],
+                        style: const TextStyle(fontSize: 17),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        recommend[index]['splash'],
+                        style: const TextStyle(
+                            fontSize: 17,
+                            color: Colors.red,
+                            decoration: TextDecoration.lineThrough,
+                            decorationColor: Colors.red,
+                            decorationThickness: 2),
+                      )
+                    ],
+                  ),
+                  GestureDetector(
+                    child: const Icon(Iconsax.heart),
+                  )
+                ],
+              )
+            ],
           );
         });
   }

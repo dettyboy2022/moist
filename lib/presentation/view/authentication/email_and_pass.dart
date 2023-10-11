@@ -13,9 +13,11 @@ class _EmailandPassState extends State<EmailandPass> {
   var emailKey = GlobalKey<FormState>();
   var usernameKey = GlobalKey<FormState>();
 
-  bool validate() {
-    return passKey.currentState!.validate();
-  }
+  // final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
+
+  // bool validate() {
+  //   return passKey.currentState!.validate();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +71,7 @@ class _EmailandPassState extends State<EmailandPass> {
             decoration: const InputDecoration(border: OutlineInputBorder()),
             validator: (value) {
               if (value!.length < 4) {
-                return 'Username should be more than 3';
+                return 'Username should be more than 3 characters';
               }
               return null;
             },

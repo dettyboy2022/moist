@@ -4,9 +4,21 @@ import 'package:moistwears/constants/custombar.dart';
 import 'package:moistwears/constants/elevatedbutton.dart';
 import 'package:moistwears/presentation/view/cart/address/address.dart';
 
-class Cart extends StatelessWidget {
+class Cart extends StatefulWidget {
   const Cart({super.key});
 
+  @override
+  State<Cart> createState() => _CartState();
+}
+
+int counter = 1;
+
+// increase counter
+void increase() {
+  counter++;
+}
+
+class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +31,7 @@ class Cart extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                      flex: 5,
+                      flex: 4,
                       child: Container(
                           height: 100,
                           decoration: BoxDecoration(
@@ -28,19 +40,19 @@ class Cart extends StatelessWidget {
                           ),
                           child: Image.asset('assets/png/lady.png'))),
                   const SizedBox(
-                    width: 10,
+                    width: 20,
                   ),
-                  const Expanded(
-                    flex: 5,
+                  Expanded(
+                    flex: 6,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'More Of Me Mesh Skirt Set - Turquoise',
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.w500),
                         ),
-                        Text(
+                        const Text(
                           '#40,000',
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.w500),
@@ -50,23 +62,29 @@ class Cart extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.add_circle),
-                                SizedBox(
+                                IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        increase();
+                                      });
+                                    },
+                                    icon: const Icon(Iconsax.add_circle)),
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Text(
-                                  '1',
-                                  style: TextStyle(
+                                  '$counter',
+                                  style: const TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w400),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Icon(Icons.remove_circle)
+                                const Icon(Icons.remove_circle)
                               ],
                             ),
-                            Icon(
+                            const Icon(
                               Iconsax.trash,
                               color: Colors.red,
                             )
