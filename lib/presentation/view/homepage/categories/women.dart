@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:moistwears/constants/custombar.dart';
 
-class Categories extends StatefulWidget {
-  const Categories({super.key});
+class WomenItems extends StatefulWidget {
+  const WomenItems({super.key});
 
   @override
-  State<Categories> createState() => _CategoriesState();
+  State<WomenItems> createState() => _CategoriesState();
 }
 
 List recommend = [
@@ -39,7 +39,7 @@ List recommend = [
   },
 ];
 
-class _CategoriesState extends State<Categories> {
+class _CategoriesState extends State<WomenItems> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
