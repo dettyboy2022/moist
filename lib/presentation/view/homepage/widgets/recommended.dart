@@ -2,43 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:moistwears/presentation/view/cart/addtocart.dart';
 
+import '../../../models/recommended_model.dart';
+
 class Recommended extends StatefulWidget {
   const Recommended({super.key});
 
   @override
   State<Recommended> createState() => _RecommendedState();
 }
-
-List recommend = [
-  {
-    'image': 'assets/woman.png',
-    'title': 'Highlife Trouser',
-    'design': 'Trouser',
-    'price': '#2,000',
-    'splash': '#4,000'
-  },
-  {
-    'image': 'assets/hoodie.png',
-    'title': 'Grey Hoodie',
-    'design': 'Hoodie',
-    'price': '#10,000',
-    'splash': '#22,000'
-  },
-  {
-    'image': 'assets/skate.png',
-    'title': 'White Tee',
-    'design': 'T-Shirt',
-    'price': '#3,000',
-    'splash': '#7,500'
-  },
-  {
-    'image': 'assets/cleanser.png',
-    'title': 'Coryx Cleanser',
-    'design': 'Cleanser',
-    'price': '#4,000',
-    'splash': '#8,000'
-  },
-];
 
 class _RecommendedState extends State<Recommended> {
   @override
@@ -48,8 +19,9 @@ class _RecommendedState extends State<Recommended> {
         shrinkWrap: true,
         itemCount: recommend.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 1 / 2.2, crossAxisSpacing: 10, crossAxisCount: 2),
+            childAspectRatio: 1 / 2.2, crossAxisSpacing: 20, crossAxisCount: 2),
         itemBuilder: (context, index) {
+          final selectedItem = recommend[index];
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -66,20 +38,22 @@ class _RecommendedState extends State<Recommended> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const AddToCart()));
+                            builder: (context) => AddToCart(
+                                  itemdetails: selectedItem,
+                                )));
                   },
                   child: Image.asset(
-                    recommend[index]['image'],
+                    recommend[index].image,
                     fit: BoxFit.contain,
                   ),
                 ),
               ),
               Text(
-                recommend[index]['title'],
+                recommend[index].title,
                 style: TextStyle(color: Colors.grey.shade500),
               ),
               Text(
-                recommend[index]['design'],
+                recommend[index].design,
                 style:
                     const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
               ),
@@ -89,14 +63,14 @@ class _RecommendedState extends State<Recommended> {
                   Row(
                     children: [
                       Text(
-                        recommend[index]['price'],
+                        recommend[index].price.toString(),
                         style: const TextStyle(fontSize: 17),
                       ),
                       const SizedBox(
                         width: 5,
                       ),
                       Text(
-                        recommend[index]['splash'],
+                        recommend[index].slashed.toString(),
                         style: const TextStyle(
                             fontSize: 17,
                             color: Colors.red,

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:moistwears/presentation/models/recommended_model.dart';
 
 import '../../../constants/elevatedbutton.dart';
 
 class AddToCart extends StatefulWidget {
-  const AddToCart({super.key});
+  final Items itemdetails;
+  const AddToCart({super.key, required this.itemdetails});
 
   @override
   State<AddToCart> createState() => _AddToCartState();
@@ -21,9 +23,9 @@ class _AddToCartState extends State<AddToCart> {
         children: [
           Container(
             decoration: BoxDecoration(color: Colors.grey.shade400),
-            height: MediaQuery.of(context).size.width * 1.3,
+            height: MediaQuery.of(context).size.width * 1.2,
             child: Image.asset(
-              'assets/png/lady.png',
+              widget.itemdetails.image,
               fit: BoxFit.contain,
               filterQuality: FilterQuality.high,
             ),
@@ -33,9 +35,10 @@ class _AddToCartState extends State<AddToCart> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'More Of Me Mesh Skirt Set - Turquoise',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                Text(
+                  widget.itemdetails.title,
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.w500),
                 ),
                 const SizedBox(
                   height: 10,
@@ -52,17 +55,17 @@ class _AddToCartState extends State<AddToCart> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Row(
+                Row(
                   children: [
                     Text(
-                      '#40,000',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                      widget.itemdetails.price.toString(),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w500),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Text(
+                    const Text(
                       'Lagos, Nigeria',
                       style: TextStyle(
                         decoration: TextDecoration.underline,
