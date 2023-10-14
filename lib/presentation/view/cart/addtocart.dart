@@ -13,6 +13,8 @@ class AddToCart extends StatefulWidget {
 }
 
 class _AddToCartState extends State<AddToCart> {
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,15 +23,47 @@ class _AddToCartState extends State<AddToCart> {
       ),
       body: ListView(
         children: [
-          Container(
-            decoration: BoxDecoration(color: Colors.grey.shade400),
-            height: MediaQuery.of(context).size.width * 1.2,
-            child: Image.asset(
-              widget.itemdetails.image,
-              fit: BoxFit.contain,
-              filterQuality: FilterQuality.high,
+          Stack(children: [
+            Container(
+              decoration: BoxDecoration(color: Colors.grey.shade400),
+              height: MediaQuery.of(context).size.width * 1.2,
+              child: PageView.builder(
+                itemCount: 4,
+                onPageChanged: (index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
+                itemBuilder: (context, index) {
+                  return Image.asset(
+                    widget.itemdetails.image,
+                    fit: BoxFit.contain,
+                  );
+                },
+              ),
             ),
-          ),
+            Positioned(
+                bottom: 50,
+                right: 0,
+                left: 0,
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                        4,
+                        (index) => Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: index == currentIndex
+                                      ? Colors.grey.shade800
+                                      : Colors.white),
+                              height: 10,
+                              margin: const EdgeInsets.symmetric(horizontal: 5),
+                              width: 10,
+                            )),
+                  ),
+                )),
+          ]),
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: Column(
@@ -49,7 +83,11 @@ class _AddToCartState extends State<AddToCart> {
                     const SizedBox(
                       width: 10,
                     ),
-                    const Text('(100)')
+                    const Text(
+                      '(100)',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+                    )
                   ],
                 ),
                 const SizedBox(
@@ -58,7 +96,7 @@ class _AddToCartState extends State<AddToCart> {
                 Row(
                   children: [
                     Text(
-                      widget.itemdetails.price.toString(),
+                      '\$${widget.itemdetails.slashed}',
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.w500),
                     ),

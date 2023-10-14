@@ -92,10 +92,6 @@ class Home extends StatelessWidget {
   }
 }
 
-
-
-
-
 class Deals extends StatelessWidget {
   const Deals({super.key});
 
@@ -159,7 +155,7 @@ class Deals extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          width: 10,
+          width: 20,
         ),
         Expanded(
           flex: 5,

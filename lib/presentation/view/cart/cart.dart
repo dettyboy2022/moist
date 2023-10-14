@@ -2,20 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:moistwears/constants/custombar.dart';
 import 'package:moistwears/constants/elevatedbutton.dart';
+import 'package:moistwears/controllers/counter_provider.dart';
 import 'package:moistwears/presentation/view/cart/address/address.dart';
+import 'package:provider/provider.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
 
   @override
   State<Cart> createState() => _CartState();
-}
-
-int counter = 1;
-
-// increase counter
-void increase() {
-  counter++;
 }
 
 class _CartState extends State<Cart> {
@@ -31,7 +26,7 @@ class _CartState extends State<Cart> {
               Row(
                 children: [
                   Expanded(
-                      flex: 4,
+                      flex: 5,
                       child: Container(
                           height: 100,
                           decoration: BoxDecoration(
@@ -55,7 +50,7 @@ class _CartState extends State<Cart> {
                         const Text(
                           '#40,000',
                           style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
+                              fontSize: 20, fontWeight: FontWeight.w700),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,23 +60,39 @@ class _CartState extends State<Cart> {
                                 IconButton(
                                     onPressed: () {
                                       setState(() {
-                                        increase();
+                                        Provider.of<CounterNotifier>(context,
+                                                listen: false)
+                                            .increment();
                                       });
                                     },
-                                    icon: const Icon(Iconsax.add_circle)),
+                                    icon: const Icon(Icons.add_circle)),
                                 const SizedBox(
                                   width: 10,
                                 ),
-                                Text(
-                                  '$counter',
-                                  style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w400),
-                                ),
+                                Consumer<CounterNotifier>(
+                                    builder: (context, counterNotifier, child) {
+                                  return Text(
+                                    '${counterNotifier.count}',
+                                    style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400),
+                                  );
+                                }),
                                 const SizedBox(
                                   width: 10,
                                 ),
-                                const Icon(Icons.remove_circle)
+                                IconButton(
+                                    onPressed: () {
+                                      if (context
+                                              .read<CounterNotifier>()
+                                              .count >
+                                          1) {
+                                        context
+                                            .read<CounterNotifier>()
+                                            .decrement();
+                                      } else {}
+                                    },
+                                    icon: const Icon(Icons.remove_circle)),
                               ],
                             ),
                             const Icon(
@@ -105,7 +116,7 @@ class _CartState extends State<Cart> {
                   ),
                   const Text(
                     '#40,000',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                   )
                 ],
               ),
@@ -121,7 +132,7 @@ class _CartState extends State<Cart> {
                   ),
                   const Text(
                     '#2,000',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                   )
                 ],
               ),
@@ -137,7 +148,10 @@ class _CartState extends State<Cart> {
                   ),
                   const Text(
                     '#42,000',
-                    style: TextStyle(fontSize: 20, color: Colors.blue),
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.blue,
+                        fontWeight: FontWeight.w700),
                   )
                 ],
               ),

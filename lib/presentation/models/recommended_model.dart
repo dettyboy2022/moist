@@ -38,4 +38,16 @@ List<Items> recommend = [
       design: 'Cleanser',
       price: 15000,
       slashed: 11500),
+  Items(
+      image: 'assets/png/woman2.png',
+      title: 'White Tee',
+      design: 'T- Shirt',
+      price: 10000,
+      slashed: 7000),
+  Items(
+      image: 'assets/jpg/smallie.jpg',
+      title: 'Coryx Cleanser',
+      design: 'Cleanser',
+      price: 15000,
+      slashed: 11500),
 ];

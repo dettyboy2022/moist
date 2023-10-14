@@ -17,7 +17,7 @@ List recommend = [
     'splash': '#15,000'
   },
   {
-    'image': 'assets/png/woman3.png',
+    'image': 'assets/png/woman.png',
     'title': 'Grey Hoodie',
     'design': 'Hoodie',
     'price': '#16,000',

@@ -63,16 +63,16 @@ class _RecommendedState extends State<Recommended> {
                   Row(
                     children: [
                       Text(
-                        recommend[index].price.toString(),
+                        '\$${recommend[index].price}',
                         style: const TextStyle(fontSize: 17),
                       ),
                       const SizedBox(
                         width: 5,
                       ),
                       Text(
-                        recommend[index].slashed.toString(),
+                        '\$${recommend[index].slashed}',
                         style: const TextStyle(
-                            fontSize: 17,
+                            fontSize: 15,
                             color: Colors.red,
                             decoration: TextDecoration.lineThrough,
                             decorationColor: Colors.red,
