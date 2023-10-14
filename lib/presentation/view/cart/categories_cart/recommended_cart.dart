@@ -59,11 +59,9 @@ class _CartState extends State<Cart> {
                               children: [
                                 IconButton(
                                     onPressed: () {
-                                      setState(() {
-                                        Provider.of<CounterNotifier>(context,
-                                                listen: false)
-                                            .increment();
-                                      });
+                                      Provider.of<CounterNotifier>(context,
+                                              listen: false)
+                                          .increment();
                                     },
                                     icon: const Icon(Icons.add_circle)),
                                 const SizedBox(
