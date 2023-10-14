@@ -48,6 +48,7 @@ class _CategoriesState extends State<WomenItems> {
                   },
                 );
               },
-            )));
+            ))
+            );
   }
 }
