@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:moistwears/controllers/mainscreen_provider.dart';
-import 'package:moistwears/presentation/view/cart/categories_cart/recommended_cart.dart';
+import 'package:moistwears/presentation/view/cart/cart.dart';
 import 'package:moistwears/presentation/view/favourite/favourite.dart';
 import 'package:moistwears/presentation/view/profile/profile.dart';
 import 'package:provider/provider.dart';

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:moistwears/controllers/addtocart_provider.dart';
 import 'package:moistwears/presentation/models/recommended_model.dart';
+import 'package:provider/provider.dart';
 
 import '../../../constants/elevatedbutton.dart';
 
@@ -117,7 +119,24 @@ class _AddToCartState extends State<AddToCart> {
                   height: 10,
                 ),
                 CustomElevated(
-                    onPressed: () {},
+                    onPressed: () {
+                      showSnack();
+                      context.read<CartNotifier>().add(recommend[2]);
+                      // .add(Items(
+                      //     image: 'image',
+                      //     title: 'title',
+                      //     design: 'design',
+                      //     price: 1,
+                      //     slashed: 2)
+                      //     );
+                      // Provider.of<CartNotifier>(context, listen: false).add(
+                      //     Items(
+                      //         image: '',
+                      //         title: '',
+                      //         design: 'design',
+                      //         price: 1,
+                      //         slashed: 2));
+                    },
                     color: Colors.black,
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -141,5 +160,15 @@ class _AddToCartState extends State<AddToCart> {
         ],
       ),
     );
+  }
+
+  showSnack() {
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        backgroundColor: Colors.black,
+        duration: Duration(milliseconds: 1000),
+        content: Text(
+          'Item Added to Cart',
+          style: TextStyle(color: Colors.white),
+        )));
   }
 }
