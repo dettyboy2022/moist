@@ -4,6 +4,7 @@ import 'package:moistwears/constants/custombar.dart';
 import 'package:moistwears/constants/elevatedbutton.dart';
 import 'package:moistwears/controllers/addtocart_provider.dart';
 import 'package:moistwears/controllers/counter_provider.dart';
+import 'package:moistwears/presentation/models/recommended_model.dart';
 import 'package:moistwears/presentation/view/cart/address/address.dart';
 import 'package:provider/provider.dart';
 
@@ -113,7 +114,13 @@ class _CartState extends State<Cart> {
                                     ),
                                     IconButton(
                                         onPressed: () {
-                                          Provider.of<CartNotifier>(context, listen: false).removeFromCart(product);
+                                          showSnack();
+                                          Provider.of<CartNotifier>(context,
+                                                  listen: false)
+                                              .removeFromCart(items as Items);
+                                          // Provider.of<CartNotifier>(context,
+                                          //         listen: false)
+                                          //     .removeFromCart(recommend[index]);
                                         },
                                         icon: const Icon(Iconsax.trash))
                                   ],
@@ -211,5 +218,15 @@ class _CartState extends State<Cart> {
         ),
       ),
     );
+  }
+
+  showSnack() {
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        backgroundColor: Colors.black,
+        duration: Duration(milliseconds: 1000),
+        content: Text(
+          'Item removed from Cart',
+          style: TextStyle(color: Colors.white),
+        )));
   }
 }

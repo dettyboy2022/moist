@@ -121,21 +121,8 @@ class _AddToCartState extends State<AddToCart> {
                 CustomElevated(
                     onPressed: () {
                       showSnack();
-                      context.read<CartNotifier>().add(recommend[2]);
-                      // .add(Items(
-                      //     image: 'image',
-                      //     title: 'title',
-                      //     design: 'design',
-                      //     price: 1,
-                      //     slashed: 2)
-                      //     );
-                      // Provider.of<CartNotifier>(context, listen: false).add(
-                      //     Items(
-                      //         image: '',
-                      //         title: '',
-                      //         design: 'design',
-                      //         price: 1,
-                      //         slashed: 2));
+                      Provider.of<CartNotifier>(context, listen: false)
+                          .add(widget.itemdetails);
                     },
                     color: Colors.black,
                     child: const Row(

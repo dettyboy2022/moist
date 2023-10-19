@@ -7,13 +7,22 @@ class CartNotifier extends ChangeNotifier {
 
   List<Items> get items => _items;
 
-  void add(Items product) {
-    _items.add(product);
+  void add(Items item) {
+    _items.add(item);
     notifyListeners();
   }
 
-  void removeFromCart(Items product) {
-    _items.remove(product);
+//   void removeFromCart(Items item) {
+//   int index = _items.indexOf(item);
+//   if (index != -1) {
+//     _items.removeAt(index);
+//     notifyListeners();
+//   }
+// }
+
+  void removeFromCart(Items item) {
+    // _items.remove(item);
+    _items.removeAt;
     notifyListeners();
   }
 }
