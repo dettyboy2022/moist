@@ -4,7 +4,6 @@ import 'package:moistwears/constants/custombar.dart';
 import 'package:moistwears/constants/elevatedbutton.dart';
 import 'package:moistwears/controllers/addtocart_provider.dart';
 import 'package:moistwears/controllers/counter_provider.dart';
-import 'package:moistwears/presentation/models/recommended_model.dart';
 import 'package:moistwears/presentation/view/cart/address/address.dart';
 import 'package:provider/provider.dart';
 
@@ -117,10 +116,7 @@ class _CartState extends State<Cart> {
                                           showSnack();
                                           Provider.of<CartNotifier>(context,
                                                   listen: false)
-                                              .removeFromCart(items as Items);
-                                          // Provider.of<CartNotifier>(context,
-                                          //         listen: false)
-                                          //     .removeFromCart(recommend[index]);
+                                              .removeFromCart(items[index]);
                                         },
                                         icon: const Icon(Iconsax.trash))
                                   ],

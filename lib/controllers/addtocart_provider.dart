@@ -21,8 +21,7 @@ class CartNotifier extends ChangeNotifier {
 // }
 
   void removeFromCart(Items item) {
-    // _items.remove(item);
-    _items.removeAt;
+    _items.remove(item);
     notifyListeners();
   }
 }
