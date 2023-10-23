@@ -1,16 +1,21 @@
-# moistwears
+# Moistwears
 
-A new Flutter project.
+# State Management
+- Provider
 
-## Getting Started
+# Features
+- Add to cart
+- Remove item from cart
+- Add and remove an item from wishlist
+- Persistent Data (Store user information - login details and product details)
+- Firebase New User Registration and Login authentication
+- Payment Integration using Stripe API
 
-This project is a starting point for a Flutter application.
+# ScreenShots 
+<img src="https://github.com/dettyboy2022/moist/assets/108200853/87250ed1-3f84-4f4e-bf05-80b591914f5a" alt="Screenshot" width="400">
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Figma Link
+ - https://www.figma.com/file/xDmw8EmWm23qi9S9wcM3qQ/Untitled?type=design&node-id=0-1&mode=design&t=YTD4kF3kuQC0LWAq-0
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
