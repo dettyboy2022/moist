@@ -75,7 +75,13 @@ class GridCard extends StatelessWidget {
               ],
             ),
             GestureDetector(
-              child: const Icon(Iconsax.heart),
+              onTap: () {
+                // add item to favourite;
+              },
+              child: Icon(
+                Iconsax.heart5,
+                color: Colors.grey.shade500,
+              ),
             )
           ],
         )

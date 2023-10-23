@@ -20,7 +20,7 @@ class _SearchState extends State<Search> {
           child: TextField(
             decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.grey.shade300,
+                fillColor: Colors.grey.shade200,
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                     borderSide: BorderSide.none,

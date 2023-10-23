@@ -17,8 +17,10 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
-    // final cartNotifier = Provider.of<CartNotifier>(context);
     final items = context.watch<CartNotifier>().items;
+    double totalPrice = Provider.of<CartNotifier>(context).totalPrice;
+    double totalDelivery = Provider.of<CartNotifier>(context).totalDelivery;
+    double delivery = 2000;
 
     return Scaffold(
       appBar: const CustomAppBar(title: 'Cart'),
@@ -59,13 +61,13 @@ class _CartState extends State<Cart> {
                                   items[index].title,
                                   style: const TextStyle(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w400),
+                                      fontWeight: FontWeight.w500),
                                 ),
-                                const Text(
-                                  '#40,000',
-                                  style: TextStyle(
+                                Text(
+                                  '\$${items[index].slashed.toString()}',
+                                  style: const TextStyle(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w400),
+                                      fontWeight: FontWeight.w500),
                                 ),
                                 Row(
                                   mainAxisAlignment:
@@ -139,10 +141,10 @@ class _CartState extends State<Cart> {
                       style:
                           TextStyle(fontSize: 18, color: Colors.grey.shade500),
                     ),
-                    const Text(
-                      '#40,000',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                    Text(
+                      '\$${totalPrice.toString()}',
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w700),
                     )
                   ],
                 ),
@@ -157,10 +159,10 @@ class _CartState extends State<Cart> {
                       style:
                           TextStyle(fontSize: 18, color: Colors.grey.shade500),
                     ),
-                    const Text(
-                      '#2,000',
+                    Text(
+                      '\$$delivery',
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                          const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                     )
                   ],
                 ),
@@ -175,9 +177,9 @@ class _CartState extends State<Cart> {
                       style:
                           TextStyle(fontSize: 18, color: Colors.grey.shade500),
                     ),
-                    const Text(
-                      '#42,000',
-                      style: TextStyle(
+                    Text(
+                      '\$${totalDelivery.toString()}',
+                      style: const TextStyle(
                           fontSize: 18,
                           color: Colors.blue,
                           fontWeight: FontWeight.w700),
