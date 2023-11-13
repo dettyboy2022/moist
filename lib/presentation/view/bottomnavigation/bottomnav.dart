@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:moistwears/controllers/addtocart_provider.dart';
 import 'package:moistwears/controllers/mainscreen_provider.dart';
 import 'package:moistwears/presentation/view/cart/cart.dart';
 import 'package:moistwears/presentation/view/favourite/favourite.dart';
@@ -16,25 +17,34 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
+    final items = context.watch<CartNotifier>().items;
+
     return Consumer<MainScreenNotifier>(
       builder: (context, mainScreenNotifier, child) {
         return CupertinoTabScaffold(
             tabBar: CupertinoTabBar(
+                height: 70,
                 activeColor: Colors.black,
                 currentIndex: mainScreenNotifier.pageIndex,
                 onTap: (index) {
                   mainScreenNotifier.setpageIndex(index);
                 },
-                items: const <BottomNavigationBarItem>[
-                  BottomNavigationBarItem(
+                items: <BottomNavigationBarItem>[
+                  const BottomNavigationBarItem(
                       icon: Icon(Iconsax.home), label: 'Home'),
-                  BottomNavigationBarItem(
+                  const BottomNavigationBarItem(
                       icon: Icon(Iconsax.heart), label: 'Favourite'),
                   BottomNavigationBarItem(
-                      icon: Icon(Iconsax.shopping_bag), label: 'Cart'),
-                  BottomNavigationBarItem(
+                      label: 'Cart',
+                      icon: Badge(
+                        smallSize: 0,
+                        label: Text(items.length.toString()),
+                        child: const Icon(Iconsax.shopping_bag),
+                      )),
+                  const BottomNavigationBarItem(
                       icon: Icon(Iconsax.profile_2user), label: 'Profile'),
                 ]),
             tabBuilder: (context, index) {

@@ -7,11 +7,12 @@ import 'package:moistwears/welcome.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MultiProvider(providers: [
+  runApp(MultiProvider(
+    providers: [
     ChangeNotifierProvider(create: (context) => MainScreenNotifier()),
     ChangeNotifierProvider(create: (context) => CounterNotifier()),
     ChangeNotifierProvider(create: (context) => CartNotifier()),
-    ChangeNotifierProvider(create: (context) => FavouriteNotifier())
+    ChangeNotifierProvider(create: (context) => FavouriteNotifier()),
   ], child: const MyApp()));
 }
 

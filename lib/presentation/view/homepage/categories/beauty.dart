@@ -10,7 +10,7 @@ class BeautyItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(title: 'Beauty Shop'),
+        appBar: const CustomAppBar(title: 'Beauty'),
         body: Padding(
             padding: const EdgeInsets.all(15.0),
             child: GridView.builder(
@@ -42,7 +42,6 @@ class BeautyItems extends StatelessWidget {
                   },
                 );
               },
-            ))
-            );
+            )));
   }
 }

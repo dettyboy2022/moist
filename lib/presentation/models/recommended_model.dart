@@ -51,3 +51,13 @@ List<Items> recommend = [
       price: 15000,
       slashed: 11500),
 ];
+
+
+
+class CartItem {
+  final Items product;
+  int quantity;
+
+  CartItem(this.product, this.quantity);
+}
+

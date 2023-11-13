@@ -161,8 +161,8 @@ class _CartState extends State<Cart> {
                     ),
                     Text(
                       '\$$delivery',
-                      style:
-                          const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w700),
                     )
                   ],
                 ),
