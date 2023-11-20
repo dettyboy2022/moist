@@ -21,9 +21,9 @@ class Home extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Hey Charles',
+                        'Welcome User!',
                         style: TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.w500),
+                            fontSize: 22, fontWeight: FontWeight.w500),
                       ),
                       Icon(Iconsax.notification)
                     ],
@@ -59,7 +59,7 @@ class Home extends StatelessWidget {
                           Text(
                             'Deals of the Day',
                             style: TextStyle(
-                                fontWeight: FontWeight.w700, fontSize: 23),
+                                fontWeight: FontWeight.w500, fontSize: 22),
                           ),
                           Icon(Icons.arrow_forward)
                         ],
@@ -74,7 +74,7 @@ class Home extends StatelessWidget {
                           Text(
                             'Recommended',
                             style: TextStyle(
-                                fontWeight: FontWeight.w700, fontSize: 23),
+                                fontWeight: FontWeight.w500, fontSize: 22),
                           ),
                           Icon(Icons.arrow_forward)
                         ],

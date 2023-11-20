@@ -26,7 +26,7 @@ class _CartState extends State<Cart> {
       appBar: const CustomAppBar(title: 'Cart'),
       body: Padding(
         padding:
-            const EdgeInsets.only(top: 15, right: 15, left: 15, bottom: 70),
+            const EdgeInsets.only(top: 15, right: 15, left: 15, bottom: 90),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
