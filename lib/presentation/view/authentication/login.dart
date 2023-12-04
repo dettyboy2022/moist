@@ -21,7 +21,7 @@ class Login extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Image.asset('assets/background.png'),
+                      Image.asset('assets/png/background.png'),
                     ],
                   ),
                   const Positioned(

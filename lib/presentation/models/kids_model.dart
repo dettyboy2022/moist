@@ -15,13 +15,13 @@ class KidsModel {
 
 List<KidsModel> kidsmodel = [
   KidsModel(
-      image: 'assets/girl.png',
+      image: 'assets/png/girl.png',
       title: 'Coryx Cleanser',
       design: 'Gown',
       price: 9000,
       slashed: 15000),
   KidsModel(
-      image: 'assets/skate.png',
+      image: 'assets/png/skate.png',
       title: 'Grey Hoodie',
       design: 'Hoodie',
       price: 5000,
@@ -33,7 +33,7 @@ List<KidsModel> kidsmodel = [
       price: 5500,
       slashed: 9500),
   KidsModel(
-      image: 'assets/lady.png',
+      image: 'assets/png/lady.png',
       title: 'Coryx Cleanser',
       design: 'Cleanser',
       price: 15000,

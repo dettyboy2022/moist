@@ -14,7 +14,7 @@ class Welcome extends StatelessWidget {
             Column(
               children: [
                 Image.asset(
-                  'assets/frame2.png',
+                  'assets/png/frame2.png',
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),
@@ -22,7 +22,7 @@ class Welcome extends StatelessWidget {
                   height: 20,
                 ),
                 Image.asset(
-                  'assets/frame3.png',
+                  'assets/png/frame3.png',
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 )
@@ -43,7 +43,7 @@ class Welcome extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('assets/moistvector.png'),
+                      Image.asset('assets/png/moistvector.png'),
                     ],
                   ),
                   const Row(

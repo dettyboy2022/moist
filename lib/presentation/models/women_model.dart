@@ -21,7 +21,7 @@ List<WomenModel> womenmodel = [
       price: 9000,
       slashed: 15000),
   WomenModel(
-      image: 'assets/woman.png',
+      image: 'assets/png/woman.png',
       title: 'Grey Hoodie',
       design: 'Hoodie',
       price: 5000,
@@ -33,7 +33,7 @@ List<WomenModel> womenmodel = [
       price: 5500,
       slashed: 9500),
   WomenModel(
-      image: 'assets/lady.png',
+      image: 'assets/png/lady.png',
       title: 'Coryx Cleanser',
       design: 'Cleanser',
       price: 15000,

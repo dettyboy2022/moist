@@ -171,7 +171,7 @@ class Deals extends StatelessWidget {
                         topRight: Radius.circular(10)),
                     color: Colors.grey.shade300),
                 child: Image.asset(
-                  'assets/boy.png',
+                  'assets/png/boy.png',
                   fit: BoxFit.contain,
                 ),
               ),

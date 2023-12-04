@@ -15,13 +15,13 @@ class BeautyModel {
 
 List<BeautyModel> beautymodel = [
   BeautyModel(
-      image: 'assets/cleanser.png',
+      image: 'assets/png/cleanser.png',
       title: 'Coryx Cleanser',
       design: 'Gown',
       price: 9000,
       slashed: 15000),
   BeautyModel(
-      image: 'assets/woman.png',
+      image: 'assets/png/woman.png',
       title: 'Grey Hoodie',
       design: 'Hoodie',
       price: 5000,
@@ -33,7 +33,7 @@ List<BeautyModel> beautymodel = [
       price: 5500,
       slashed: 9500),
   BeautyModel(
-      image: 'assets/lady.png',
+      image: 'assets/png/lady.png',
       title: 'Coryx Cleanser',
       design: 'Cleanser',
       price: 15000,

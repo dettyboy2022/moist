@@ -15,7 +15,7 @@ class GoToHome extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Image.asset('assets/background.png'),
+                Image.asset('assets/png/background.png'),
               ],
             ),
             const SizedBox(
@@ -25,7 +25,7 @@ class GoToHome extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 children: [
-                  Image.asset('assets/happy.png'),
+                  Image.asset('assets/png/happy.png'),
                   const SizedBox(
                     height: 15,
                   ),

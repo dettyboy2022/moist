@@ -15,25 +15,25 @@ class Items {
 
 List<Items> recommend = [
   Items(
-      image: 'assets/woman.png',
+      image: 'assets/png/woman.png',
       title: 'Highlife Trouser',
       design: 'Trouser',
       price: 6000,
       slashed: 4000),
   Items(
-      image: 'assets/hoodie.png',
+      image: 'assets/png/hoodie.png',
       title: 'Grey Hoodie',
       design: 'Hoodie',
       price: 5000,
       slashed: 3000),
   Items(
-      image: 'assets/skate.png',
+      image: 'assets/png/skate.png',
       title: 'White Tee',
       design: 'T- Shirt',
       price: 10000,
       slashed: 7000),
   Items(
-      image: 'assets/cleanser.png',
+      image: 'assets/png/cleanser.png',
       title: 'Coryx Cleanser',
       design: 'Cleanser',
       price: 15000,
@@ -52,12 +52,9 @@ List<Items> recommend = [
       slashed: 11500),
 ];
 
-
-
 class CartItem {
   final Items product;
   int quantity;
 
   CartItem(this.product, this.quantity);
 }
-
