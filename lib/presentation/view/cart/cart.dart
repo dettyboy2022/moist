@@ -63,6 +63,9 @@ class _CartState extends State<Cart> {
                                       fontSize: 16,
                                       fontWeight: FontWeight.w500),
                                 ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
                                 Text(
                                   '\$${items[index].slashed.toString()}',
                                   style: const TextStyle(
@@ -75,14 +78,15 @@ class _CartState extends State<Cart> {
                                   children: [
                                     Row(
                                       children: [
-                                        IconButton(
-                                            onPressed: () {
+                                        GestureDetector(
+                                            onTap: () {
                                               Provider.of<CounterNotifier>(
                                                       context,
                                                       listen: false)
                                                   .increment();
                                             },
-                                            icon: const Icon(Icons.add_circle)),
+                                            child:
+                                                const Icon(Icons.add_circle)),
                                         const SizedBox(
                                           width: 10,
                                         ),
@@ -98,8 +102,8 @@ class _CartState extends State<Cart> {
                                         const SizedBox(
                                           width: 10,
                                         ),
-                                        IconButton(
-                                            onPressed: () {
+                                        GestureDetector(
+                                            onTap: () {
                                               if (context
                                                       .read<CounterNotifier>()
                                                       .count >
@@ -109,8 +113,8 @@ class _CartState extends State<Cart> {
                                                     .decrement();
                                               } else {}
                                             },
-                                            icon: const Icon(
-                                                Icons.remove_circle)),
+                                            child:
+                                                const Icon(Icons.remove_circle))
                                       ],
                                     ),
                                     IconButton(
@@ -120,7 +124,10 @@ class _CartState extends State<Cart> {
                                                   listen: false)
                                               .removeFromCart(items[index]);
                                         },
-                                        icon: const Icon(Iconsax.trash))
+                                        icon: const Icon(
+                                          Iconsax.trash,
+                                          color: Colors.red,
+                                        ))
                                   ],
                                 )
                               ],

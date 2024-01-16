@@ -35,25 +35,66 @@ class _FilterState extends State<Filter> {
                       );
                     },
                     body: GridView.builder(
+                        padding: EdgeInsets.zero,
                         shrinkWrap: true,
                         itemCount: price.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                                mainAxisExtent: 50,
                                 crossAxisSpacing: 10,
                                 mainAxisSpacing: 10,
+                                mainAxisExtent: 50,
                                 crossAxisCount: 3),
                         itemBuilder: (context, index) {
-                          return Container(
-                            height: 50,
-                            width: 100,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(),
-                            ),
-                            child: Center(child: Text(price[index])),
-                          );
-                        })),
+                          return ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  side: const BorderSide(color: Colors.black),
+                                  shape: const RoundedRectangleBorder()),
+                              onPressed: () {},
+                              child: Text(
+                                price[index],
+                                style: const TextStyle(color: Colors.black),
+                              ));
+                          // return Container(
+                          //   decoration: BoxDecoration(border: Border.all()),
+                          //   child: Text(price[index].toString()),
+                          // );
+                        })
+                    // body: GridView.builder(
+                    //     shrinkWrap: true,
+                    //     itemCount: price.length,
+                    //     gridDelegate:
+                    //         const SliverGridDelegateWithFixedCrossAxisCount(
+                    //             mainAxisSpacing: 10,
+                    //             crossAxisSpacing: 10,
+                    //             crossAxisCount: 3),
+                    //     itemBuilder: (_, i) {
+                    //       return RawChip(
+                    //           padding: EdgeInsets.zero,
+                    //           label: Text(price[i].toString()));
+                    //     })
+                    // body: GridView.builder(
+                    //     padding: EdgeInsets.zero,
+                    //     shrinkWrap: true,
+                    //     itemCount: price.length,
+                    //     gridDelegate:
+                    //         const SliverGridDelegateWithFixedCrossAxisCount(
+                    //             // mainAxisExtent: 50,
+                    //             crossAxisSpacing: 10,
+                    //             mainAxisSpacing: 10,
+                    //             crossAxisCount: 3),
+                    //     itemBuilder: (context, index) {
+                    //       return Container(
+                    //         // height: 50,
+                    //         // width: 150,
+                    //         decoration: BoxDecoration(
+                    //           borderRadius: BorderRadius.circular(10),
+                    //           border: Border.all(),
+                    //         ),
+                    //         child: Center(child: Text(price[index])),
+                    //       );
+                    //     })
+                    ),
                 ExpansionPanelRadio(
                     canTapOnHeader: true,
                     value: 2,
@@ -63,11 +104,11 @@ class _FilterState extends State<Filter> {
                               fontSize: 18, fontWeight: FontWeight.w400));
                     },
                     body: GridView.builder(
+                        padding: EdgeInsets.zero,
                         shrinkWrap: true,
                         itemCount: colors.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                                mainAxisExtent: 50,
                                 crossAxisSpacing: 10,
                                 mainAxisSpacing: 10,
                                 crossAxisCount: 5),
@@ -88,6 +129,7 @@ class _FilterState extends State<Filter> {
                               fontSize: 18, fontWeight: FontWeight.w400));
                     },
                     body: GridView.builder(
+                        padding: EdgeInsets.zero,
                         shrinkWrap: true,
                         itemCount: reviews.length,
                         gridDelegate:
@@ -110,6 +152,7 @@ class _FilterState extends State<Filter> {
                               fontSize: 18, fontWeight: FontWeight.w400));
                     },
                     body: GridView.builder(
+                        padding: EdgeInsets.zero,
                         shrinkWrap: true,
                         itemCount: products.length,
                         gridDelegate:
@@ -136,6 +179,7 @@ class _FilterState extends State<Filter> {
                               fontSize: 18, fontWeight: FontWeight.w400));
                     },
                     body: GridView.builder(
+                        padding: EdgeInsets.zero,
                         shrinkWrap: true,
                         itemCount: available.length,
                         gridDelegate:
