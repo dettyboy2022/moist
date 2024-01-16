@@ -12,7 +12,8 @@
 - Payment Integration using Stripe API
 
 # ScreenShots 
-<img src="https://github.com/dettyboy2022/moist/assets/108200853/87250ed1-3f84-4f4e-bf05-80b591914f5a" alt="Screenshot" width="400">
+<img src="https://github.com/dettyboy2022/moist/assets/108200853/6c74c845-e1a9-4557-914a-04f61792cdd3" alt="Screenshot" width="300">
+<img src="https://github.com/dettyboy2022/moist/assets/108200853/956168a9-ddff-4b38-b980-b0a4a1eeb0ce" alt="Screenshot" width="300">
 
 
 # Figma Link
